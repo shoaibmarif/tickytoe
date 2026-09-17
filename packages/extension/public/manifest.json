@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Tic Tac Toe - Play Offline Anywhere",
+  "version": "1.0.0",
+  "description": "Free, instant, 100% private offline Tic Tac Toe with unbeatable AI and 2-player modes.",
+  "homepage_url": "https://tictactoe-pro.netlify.app/",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Open Tic Tac Toe",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}

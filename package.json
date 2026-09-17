@@ -1,0 +1,22 @@
+{
+  "name": "tictactoe-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:web",
+    "dev:web": "npm run dev --workspace=@tictactoe/web",
+    "dev:ext": "npm run dev --workspace=@tictactoe/extension",
+    "build:web": "npm run build --workspace=@tictactoe/web",
+    "build:ext": "npm run build --workspace=@tictactoe/extension",
+    "build:favicons": "node scripts/build-favicons.mjs",
+    "build": "npm run build --workspaces --if-present",
+    "test": "vitest run packages/core"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
+  }
+}
