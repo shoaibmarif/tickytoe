@@ -4,6 +4,12 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'Poppins', 'system-ui', 'sans-serif'],
+        heading: ['Poppins', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
       colors: {
         darkBg: '#090d16',
         darkCard: '#111726',
