@@ -1,7 +1,7 @@
 {
-  "name": "Tic Tac Toe",
-  "short_name": "TicTacToe",
-  "description": "Play free, modern, and feature-rich Tic Tac Toe online.",
+  "name": "tickytoe",
+  "short_name": "tickytoe",
+  "description": "Play free, modern, and feature-rich Tic Tac Toe online on tickytoe.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#090d16",

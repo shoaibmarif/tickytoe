@@ -104,7 +104,7 @@ export const PrivacyPolicy: React.FC = () => {
             <span>1. Information We Do Not Collect</span>
           </h2>
           <p>
-            We believe consumer utilities should respect user privacy and independence. Unlike typical web applications, <strong>Tic Tac Toe Online</strong>:
+            We believe consumer utilities should respect user privacy and independence. Unlike typical web applications, <strong>tickytoe</strong>:
           </p>
           <ul className="list-disc pl-5 space-y-1.5">
             <li>Does <strong>not</strong> require user registration, logins, passwords, or email addresses.</li>
@@ -181,7 +181,7 @@ export const PrivacyPolicy: React.FC = () => {
             <span>4. Google Chrome Extension (Manifest V3) Security</span>
           </h2>
           <p>
-            The official <strong>Tic Tac Toe Google Chrome Extension</strong> operates under Google's modern Manifest V3 security model:
+            The official <strong>tickytoe Google Chrome Extension</strong> operates under Google's modern Manifest V3 security model:
           </p>
           <ul className="list-disc pl-5 space-y-1.5">
             <li>
@@ -293,7 +293,7 @@ export const PrivacyPolicy: React.FC = () => {
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-glow-indigo transition-all active:scale-95"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Return to Tic Tac Toe Game</span>
+          <span>Return to tickytoe Game</span>
         </a>
       </div>
     </div>

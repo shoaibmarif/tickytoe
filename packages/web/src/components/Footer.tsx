@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
           <div className="flex items-center gap-1.5 font-medium text-slate-600 dark:text-slate-400">
-            <span>© {new Date().getFullYear()} Tic Tac Toe Online. Free & Open Source.</span>
+            <span>© {new Date().getFullYear()} tickytoe. Free & Open Source.</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">

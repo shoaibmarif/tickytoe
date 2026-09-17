@@ -26,8 +26,8 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-[#090d16]/70 backdrop-blur-md sticky top-0 z-40 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-[2px] shadow-glow-indigo transition-transform group-hover:scale-105">
+        <a href="/" className="flex items-center gap-3 cursor-pointer">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-[2px] shadow-glow-indigo">
             <div className="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none">
                 <path d="M4 4L10 10M10 4L4 10" stroke="#22d3ee" strokeWidth="2.5" strokeLinecap="round" />
@@ -37,8 +37,8 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-800 dark:from-white dark:via-indigo-200 dark:to-cyan-200">
-                Tic Tac Toe
+              <span className="font-extrabold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-800 dark:from-white dark:via-indigo-200 dark:to-cyan-200 font-heading">
+                tickytoe
               </span>
               <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800">
                 PRO

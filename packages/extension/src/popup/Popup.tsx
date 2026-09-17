@@ -121,7 +121,7 @@ export const Popup: React.FC = () => {
             <Sparkles size={16} color="#ffffff" />
           </div>
           <span style={{ fontWeight: 800, fontSize: '15px', color: '#ffffff' }}>
-            Tic Tac Toe
+            tickytoe
           </span>
           <span
             style={{
