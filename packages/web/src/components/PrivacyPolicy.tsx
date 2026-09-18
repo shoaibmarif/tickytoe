@@ -5,7 +5,6 @@ import {
   Lock,
   Cpu,
   Database,
-  Radio,
   FileText,
   ExternalLink,
   RotateCcw,
@@ -153,32 +152,7 @@ export const PrivacyPolicy: React.FC = () => {
         {/* Section 3 */}
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
-            <Radio className="w-4 h-4 text-cyan-500" />
-            <span>3. Peer-to-Peer (WebRTC) Online Multiplayer & Signaling</span>
-          </h2>
-          <p>
-            When utilizing <strong>Online Multiplayer Mode</strong>, communication between the two players operates via direct peer-to-peer browser links:
-          </p>
-          <ul className="list-disc pl-5 space-y-1.5">
-            <li>
-              <strong>Direct Encryption:</strong> All gameplay moves, emoji reactions, and heartbeats are transmitted directly over WebRTC DataChannels secured by Datagram Transport Layer Security (DTLS) and SCTP encryption.
-            </li>
-            <li>
-              <strong>Room Limits & Isolation:</strong> Each online room is strictly capped at a <strong>maximum of 2 players</strong> (Host and Guest). Any unauthorized third-party attempt to connect to an active room is automatically rejected.
-            </li>
-            <li>
-              <strong>Google STUN Servers:</strong> Standard public Google STUN servers (<code>stun:stun.l.google.com:19302</code>) are queried solely during initial connection negotiation to determine Network Address Translation (NAT) and ICE candidates. STUN servers only handle routing addresses and do not intercept, view, or record game data.
-            </li>
-            <li>
-              <strong>Connection Heartbeats & Tab Close Detection:</strong> Active online games verify connection health every 5 seconds. If either player closes their tab or disconnects, the connection terminates cleanly, declaring the remaining player the winner by forfeit.
-            </li>
-          </ul>
-        </section>
-
-        {/* Section 4 */}
-        <section className="space-y-3">
-          <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
-            <span>4. Google Chrome Extension (Manifest V3) Security</span>
+            <span>3. Google Chrome Extension (Manifest V3) Security</span>
           </h2>
           <p>
             The official <strong>tickytoe Google Chrome Extension</strong> operates under Google's modern Manifest V3 security model:
@@ -196,11 +170,11 @@ export const PrivacyPolicy: React.FC = () => {
           </ul>
         </section>
 
-        {/* Section 5 */}
+        {/* Section 4 */}
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
             <FileText className="w-4 h-4 text-indigo-500" />
-            <span>5. Regulatory Compliance & Legal References</span>
+            <span>4. Regulatory Compliance & Legal References</span>
           </h2>
           <p>
             Because we do not collect, process, or sell personal data, our application inherently satisfies the highest global privacy and consumer protection standards:
@@ -233,23 +207,14 @@ export const PrivacyPolicy: React.FC = () => {
                 Our service is safe for users of all ages, including children under 13, as no personal information is solicited, collected, or stored.
               </p>
             </div>
-
-            <div className="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 space-y-1">
-              <span className="font-bold text-slate-900 dark:text-white text-xs block">
-                IETF & W3C WebRTC Protocols (RFC 8825, RFC 8827 & RFC 5389)
-              </span>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                Peer-to-peer data channels implement standard DTLS and SCTP protocol specifications, guaranteeing end-to-end payload confidentiality between browsers.
-              </p>
-            </div>
           </div>
         </section>
 
-        {/* Section 6 */}
+        {/* Section 5 */}
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
             <RotateCcw className="w-4 h-4 text-emerald-500" />
-            <span>6. User Rights & Data Deletion</span>
+            <span>5. User Rights & Data Deletion</span>
           </h2>
           <p>
             You have complete sovereignty over all data stored on your device:
@@ -264,10 +229,10 @@ export const PrivacyPolicy: React.FC = () => {
           </ul>
         </section>
 
-        {/* Section 7 */}
+        {/* Section 6 */}
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
-            <span>7. Contact & Source Code Audit</span>
+            <span>6. Contact & Source Code Audit</span>
           </h2>
           <p>
             This project is free and open-source. For technical inquiries, security disclosures, or code audits, please open an issue or pull request via our public GitHub repository.

@@ -3,8 +3,20 @@
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: 'ttt-open-web',
-    title: 'Open Tic Tac Toe Full App',
+    title: 'Play tickytoe Full Web App',
     contexts: ['action', 'page'],
+  });
+
+  chrome.contextMenus.create({
+    id: 'ttt-github',
+    title: 'Developer GitHub (Shoaib M Arif)',
+    contexts: ['action'],
+  });
+
+  chrome.contextMenus.create({
+    id: 'ttt-linkedin',
+    title: 'Developer LinkedIn (Shoaib M Arif)',
+    contexts: ['action'],
   });
 
   chrome.contextMenus.create({
@@ -20,6 +32,10 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.contextMenus.onClicked.addListener((info) => {
   if (info.menuItemId === 'ttt-open-web') {
     chrome.tabs.create({ url: 'https://tictactoe-pro.netlify.app/' });
+  } else if (info.menuItemId === 'ttt-github') {
+    chrome.tabs.create({ url: 'https://github.com/shoaibmarif' });
+  } else if (info.menuItemId === 'ttt-linkedin') {
+    chrome.tabs.create({ url: 'https://www.linkedin.com/in/shoaibmarif/' });
   } else if (info.menuItemId === 'ttt-reset-badge') {
     chrome.action.setBadgeText({ text: '' });
   }

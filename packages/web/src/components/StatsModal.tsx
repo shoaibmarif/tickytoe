@@ -44,50 +44,50 @@ export const StatsModal: React.FC<StatsModalProps> = ({
         {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto py-4 space-y-6">
           {/* Top Metrics Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 text-center">
-              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 text-center">
+              <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
                 Total Matches
               </span>
-              <span className="text-2xl font-black text-slate-900 dark:text-white mt-0.5 block">
+              <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-0.5 block whitespace-nowrap">
                 {stats.totalGames}
               </span>
             </div>
 
-            <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 text-center">
-              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 text-center">
+              <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
                 Win Rate
               </span>
-              <span className="text-2xl font-black text-indigo-500 mt-0.5 block">
+              <span className="text-xl sm:text-2xl font-black text-indigo-500 mt-0.5 block whitespace-nowrap">
                 {winRate}%
               </span>
             </div>
 
-            <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 text-center">
-              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-center gap-1">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 text-center">
+              <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-center gap-1">
                 <Flame className="w-3 h-3 text-amber-500" /> Streak
               </span>
-              <span className="text-2xl font-black text-amber-500 mt-0.5 block">
+              <span className="text-xl sm:text-2xl font-black text-amber-500 mt-0.5 block whitespace-nowrap">
                 {stats.currentStreak}
               </span>
             </div>
 
-            <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 text-center">
-              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-center gap-1">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 text-center">
+              <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-center gap-1">
                 <Award className="w-3 h-3 text-rose-500" /> Best
               </span>
-              <span className="text-2xl font-black text-rose-500 mt-0.5 block">
+              <span className="text-xl sm:text-2xl font-black text-rose-500 mt-0.5 block whitespace-nowrap">
                 {stats.bestStreak}
               </span>
             </div>
           </div>
 
           {/* Breakdown Bar */}
-          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 space-y-2">
+          <div className="p-3 sm:p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 space-y-2">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
               Result Distribution
             </span>
-            <div className="flex items-center justify-between text-xs font-semibold mb-1">
+            <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold mb-1">
               <span className="text-cyan-500">X Wins: {stats.xWins}</span>
               <span className="text-slate-400">Draws: {stats.draws}</span>
               <span className="text-rose-500">O Wins: {stats.oWins}</span>
@@ -128,7 +128,7 @@ export const StatsModal: React.FC<StatsModalProps> = ({
                 {stats.history.slice(-8).reverse().map((item) => (
                   <div
                     key={item.id}
-                    className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/40 dark:border-slate-800/40 text-xs"
+                    className="flex flex-col sm:flex-row sm:items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/40 dark:border-slate-800/40 text-xs gap-1.5 sm:gap-2"
                   >
                     <div className="flex items-center gap-2">
                       <span
@@ -146,7 +146,7 @@ export const StatsModal: React.FC<StatsModalProps> = ({
                         {item.mode === 'ai' ? `vs AI (${item.difficulty})` : '2-Player'}
                       </span>
                     </div>
-                    <div className="flex items-center gap-3 text-slate-400">
+                    <div className="flex items-center gap-3 text-slate-400 text-[11px] sm:text-xs">
                       <span>{item.gridSize}x{item.gridSize}</span>
                       <span>{item.totalMoves} moves</span>
                       <span>{item.date}</span>

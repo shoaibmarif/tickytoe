@@ -11,7 +11,6 @@
   "dependencies": {
     "@tictactoe/core": "*",
     "lucide-react": "^1.16.0",
-    "peerjs": "^1.5.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

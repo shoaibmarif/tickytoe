@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "tickytoe - Play Offline Anywhere",
+  "name": "tickytoe - Offline Tic Tac Toe with Unbeatable AI",
   "version": "1.0.0",
-  "description": "Free, instant, 100% private offline Tic Tac Toe with unbeatable AI and 2-player modes on tickytoe.",
+  "description": "Play instant, offline Tic Tac Toe with unbeatable Minimax AI, 3x3, 4x4 & 5x5 grids, and local 2-player mode. Created by Shoaib M Arif.",
+  "author": "Shoaib M Arif",
   "homepage_url": "https://tictactoe-pro.netlify.app/",
   "action": {
     "default_popup": "popup.html",

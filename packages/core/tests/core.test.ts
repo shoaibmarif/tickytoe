@@ -152,30 +152,6 @@ describe('AI & Minimax Logic', () => {
     expect(engine.getState().status).toBe('draw');
     expect(engine.getState().winner).toBeNull();
   });
-
-  it('supports online game mode initialization and moves', () => {
-    const engine = new TicTacToeEngine({ gridSize: 3, mode: 'online', playerSymbol: 'X' });
-    expect(engine.getState().mode).toBe('online');
-    expect(engine.getState().currentPlayer).toBe('X');
-    
-    // Player X makes first move
-    let state = engine.makeMove(0);
-    expect(state.board[0]).toBe('X');
-    expect(state.currentPlayer).toBe('O');
-
-    // Player O makes second move
-    state = engine.makeMove(4);
-    expect(state.board[4]).toBe('O');
-    expect(state.currentPlayer).toBe('X');
-  });
-
-  it('declares winner on forfeit when opponent leaves', () => {
-    const engine = new TicTacToeEngine({ gridSize: 3, mode: 'online', playerSymbol: 'X' });
-    engine.makeMove(0);
-    const forfeitedState = engine.forfeit('X');
-    expect(forfeitedState.status).toBe('won');
-    expect(forfeitedState.winner).toBe('X');
-    expect(forfeitedState.winLine).toBeNull();
-  });
 });
+
 

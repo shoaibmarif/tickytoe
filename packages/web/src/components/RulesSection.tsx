@@ -7,7 +7,7 @@ import {
   Zap,
   HelpCircle,
   ShieldCheck,
-  Radio,
+  Users,
   Clock,
   Volume2,
   Undo2,
@@ -31,9 +31,9 @@ export const RulesSection: React.FC = () => {
       desc: 'From Easy and Medium to Hard and Master (Minimax decision algorithm with alpha-beta pruning).',
     },
     {
-      icon: <Radio className="w-5 h-5 text-rose-500" />,
-      title: 'P2P Online Multiplayer',
-      desc: 'Serverless WebRTC direct browser-to-browser connections with 6-digit room codes, 2-player capacity, 5s heartbeats, and forfeit on tab close.',
+      icon: <Users className="w-5 h-5 text-rose-500" />,
+      title: 'Local 2-Player Battle',
+      desc: 'Pass-and-play local two-player mode with active turn notifications and instant round resets on phone, tablet, or PC.',
     },
     {
       icon: <Clock className="w-5 h-5 text-amber-500" />,
@@ -81,8 +81,8 @@ export const RulesSection: React.FC = () => {
       desc: 'Tic Tac Toe was among the very first games implemented on digital computers. In 1952, Alexander S. Douglas developed OXO on the EDSAC computer at Cambridge University. Modern game engines, including tickytoe, use the Minimax algorithm formulated by John von Neumann (1928), augmented with Alpha-Beta Pruning (John McCarthy, 1956) to recursively evaluate game trees and select minimax-optimal moves with O(b^(d/2)) search efficiency.',
     },
     {
-      title: 'WebRTC Networking & Cryptographic Standards',
-      desc: 'tickytoe online multiplayer implements standard IETF & W3C specifications for real-time browser communication: RFC 8825 (Overview: Real-Time Protocols for WebRTC), RFC 8827 (WebRTC Security Architecture), and RFC 5389 (Session Traversal Utilities for NAT - STUN). DataChannels utilize Datagram Transport Layer Security (DTLS) and Stream Control Transmission Protocol (SCTP) for end-to-end encrypted packet transmission.',
+      title: 'State Space Complexity & Zero-Sum Play',
+      desc: 'Standard 3x3 Tic Tac Toe features a state space of 5,478 legal reachable positions and 765 strategically distinct symmetrical variations. Under John von Neumann’s Minimax Theorem, when standard utility values (+1 for victory, 0 for draw, -1 for loss) are recursively assigned, standard optimal play guarantees a draw, demonstrating the deterministic mathematical boundaries of finite games.',
     },
   ];
 
@@ -96,8 +96,8 @@ export const RulesSection: React.FC = () => {
       a: 'In 4x4 mode, the objective is to connect 4 consecutive marks horizontally, vertically, or diagonally across 16 cells. In 5x5 mode, players aim to align 4 consecutive marks across 25 cells. This creates deeper tactical possibilities reminiscent of Gomoku and Five-in-a-Row.',
     },
     {
-      q: 'How does Online P2P multiplayer work?',
-      a: 'Online matches connect directly between browsers using WebRTC without routing game moves through intermediate application servers. One player creates a room and shares the 6-digit code. Each room supports a maximum of 2 players, verifies connection health every 5 seconds, and awards an automatic forfeit victory if a player closes their tab or disconnects.',
+      q: 'How does Local 2-Player mode work?',
+      a: 'Local 2-Player mode allows two players on the same device (desktop, tablet, or phone) to take turns placing their marks. The interface highlights the active player, records move history with 1-click undo, and tallies head-to-head score stats without requiring any internet connection.',
     },
     {
       q: 'Can I play tickytoe offline or install it as an extension?',
@@ -110,27 +110,29 @@ export const RulesSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full max-w-5xl mx-auto mt-16 pt-12 border-t border-slate-200/80 dark:border-slate-800/80 space-y-16">
+    <section className="w-full max-w-5xl mx-auto mt-10 sm:mt-16 pt-8 sm:pt-12 border-t border-slate-200/80 dark:border-slate-800/80 space-y-10 sm:space-y-16">
       {/* 1. All Features Provided */}
       <div>
-        <div className="text-center mb-10">
+        <div className="text-center mb-6 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider mb-2">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Complete Feature Suite</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading">
             Everything Built Into tickytoe
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-xl mx-auto mt-1">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-xl mx-auto mt-1 px-2">
             Engineered with modern web technologies, sensory audio feedback, and client-side privacy.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
           {features.map((f, i) => (
             <div
               key={i}
-              className="p-5 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-sm space-y-2 hover:border-indigo-500/40 transition-colors"
+              className={`p-4 sm:p-5 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-sm space-y-2 hover:border-indigo-500/40 transition-colors ${
+                i === features.length - 1 ? 'sm:col-span-2 lg:col-span-1' : ''
+              }`}
             >
               <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
                 {f.icon}
@@ -148,24 +150,24 @@ export const RulesSection: React.FC = () => {
 
       {/* 2. Historical & Mathematical References */}
       <div>
-        <div className="text-center mb-10">
+        <div className="text-center mb-6 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider mb-2">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Mathematical & Historical Compendium</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading">
             The Science & History of Tic Tac Toe
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-xl mx-auto mt-1">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-xl mx-auto mt-1 px-2">
             Explore the mathematics, game theory, and computational history behind the timeless classic.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
           {references.map((ref, i) => (
             <div
               key={i}
-              className="p-5 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md space-y-2"
+              className="p-4 sm:p-5 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md space-y-2"
             >
               <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider">
                 <Terminal className="w-3.5 h-3.5" />
@@ -184,22 +186,22 @@ export const RulesSection: React.FC = () => {
 
       {/* 3. Strategies & Rules Cards */}
       <div>
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider mb-2">
             <Brain className="w-3.5 h-3.5" />
             <span>Gameplay Tactics</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading">
             Mastering The Grid
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-4">
-          <div className="p-5 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
             <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center mb-3">
               <Sparkles className="w-5 h-5" />
             </div>
-            <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5 font-heading">
+            <h3 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base mb-1.5 font-heading">
               Classic 3x3 Strategy
             </h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -207,11 +209,11 @@ export const RulesSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
             <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center mb-3">
               <Brain className="w-5 h-5" />
             </div>
-            <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5 font-heading">
+            <h3 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base mb-1.5 font-heading">
               Tactical 4x4 Grid
             </h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -219,11 +221,11 @@ export const RulesSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
             <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center mb-3">
               <Zap className="w-5 h-5" />
             </div>
-            <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5 font-heading">
+            <h3 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base mb-1.5 font-heading">
               Dynamic 5x5 Grid
             </h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">

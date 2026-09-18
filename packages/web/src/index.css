@@ -15,6 +15,9 @@
     font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
     letter-spacing: -0.02em;
   }
+  button {
+    touch-action: manipulation;
+  }
 }
 
 /* Glassmorphism card utility */

@@ -1,7 +1,7 @@
 export type Player = 'X' | 'O';
 export type CellState = Player | null;
 export type GridSize = 3 | 4 | 5;
-export type GameMode = 'ai' | 'pvp' | 'online';
+export type GameMode = 'ai' | 'pvp';
 export type Difficulty = 'easy' | 'medium' | 'hard' | 'unbeatable';
 export type GameStatus = 'in_progress' | 'won' | 'draw';
 

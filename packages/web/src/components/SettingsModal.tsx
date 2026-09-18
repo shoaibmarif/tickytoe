@@ -19,26 +19,26 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm animate-fadeIn">
-      <div className="w-full max-w-md rounded-3xl bg-white dark:bg-[#111726] border border-slate-200 dark:border-slate-800 shadow-2xl p-6 relative flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/60 backdrop-blur-sm animate-fadeIn">
+      <div className="w-full max-w-md rounded-3xl bg-white dark:bg-[#111726] border border-slate-200 dark:border-slate-800 shadow-2xl p-4 sm:p-6 relative max-h-[90vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
+        <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-slate-200 dark:border-slate-800 flex-shrink-0">
           <div className="flex items-center gap-2">
             <Sliders className="w-5 h-5 text-indigo-500" />
-            <h2 className="text-lg font-extrabold text-slate-900 dark:text-white">
+            <h2 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">
               Game Settings
             </h2>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors touch-manipulation"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Options */}
-        <div className="py-4 space-y-5">
+        <div className="py-3 sm:py-4 space-y-4 sm:space-y-5 overflow-y-auto flex-1 pr-1">
           {/* Turn Timer */}
           <div>
             <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
