@@ -19,12 +19,12 @@ import {
   Trophy,
 } from 'lucide-react';
 
-const WEB_APP_URL = 'https://tictactoe-pro.netlify.app/';
+const WEB_APP_URL = 'https://tickytoe.netlify.app/';
 const GITHUB_URL = 'https://github.com/shoaibmarif';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/shoaibmarif/';
 const EXT_VERSION = 'v1.0.0';
 
-// Web Audio API Sound Synthesizer (No external audio file dependencies)
+// Web Audio API Sound Synthesizer (Zero external file dependencies)
 const playSound = (type: 'move-x' | 'move-o' | 'win' | 'draw' | 'click' | 'reset') => {
   try {
     const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
@@ -46,7 +46,7 @@ const playSound = (type: 'move-x' | 'move-o' | 'win' | 'draw' | 'click' | 'reset
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+      osc.frequency.setValueAtTime(523.25, ctx.currentTime);
       gain.gain.setValueAtTime(0.12, ctx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
       osc.connect(gain);
@@ -57,7 +57,7 @@ const playSound = (type: 'move-x' | 'move-o' | 'win' | 'draw' | 'click' | 'reset
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(392.0, ctx.currentTime); // G4
+      osc.frequency.setValueAtTime(392.0, ctx.currentTime);
       gain.gain.setValueAtTime(0.12, ctx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
       osc.connect(gain);
@@ -65,7 +65,7 @@ const playSound = (type: 'move-x' | 'move-o' | 'win' | 'draw' | 'click' | 'reset
       osc.start();
       osc.stop(ctx.currentTime + 0.08);
     } else if (type === 'win') {
-      const notes = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
+      const notes = [523.25, 659.25, 783.99, 1046.5];
       notes.forEach((freq, idx) => {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
@@ -102,7 +102,7 @@ const playSound = (type: 'move-x' | 'move-o' | 'win' | 'draw' | 'click' | 'reset
       osc.stop(ctx.currentTime + 0.06);
     }
   } catch {
-    // AudioContext fallback
+    // AudioContext safely ignored
   }
 };
 
@@ -127,7 +127,7 @@ export const Popup: React.FC = () => {
 
   const [gameState, setGameState] = useState(engineRef.current.getState());
 
-  // Safe navigation helper for Chrome extensions and web
+  // Navigation helper for Chrome extension and web
   const openUrl = (url: string) => {
     if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
       chrome.tabs.create({ url });
@@ -403,7 +403,7 @@ export const Popup: React.FC = () => {
               alignItems: 'center',
               justifyContent: 'center',
             }}
-            title="Open Web App (Full Screen)"
+            title="Open Web App (https://tickytoe.netlify.app/)"
           >
             <ExternalLink size={15} />
           </button>
@@ -788,42 +788,6 @@ export const Popup: React.FC = () => {
         </button>
       </div>
 
-      {/* Full Web App Card Promo */}
-      <div
-        onClick={() => openUrl(WEB_APP_URL)}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(6, 182, 212, 0.12) 100%)',
-          border: '1px solid rgba(99, 102, 241, 0.3)',
-          borderRadius: '12px',
-          padding: '10px 12px',
-          cursor: 'pointer',
-        }}
-      >
-        <div>
-          <div style={{ fontSize: '11px', fontWeight: 800, color: '#ffffff' }}>
-            Play Full Web App
-          </div>
-          <div style={{ fontSize: '10px', color: '#94a3b8' }}>
-            Full screen, sound controls, dark theme & stats
-          </div>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px',
-            fontSize: '11px',
-            fontWeight: 700,
-            color: '#38bdf8',
-          }}
-        >
-          <span>Launch</span>
-          <ExternalLink size={13} />
-        </div>
-      </div>
 
       {/* Developer Profile & Social Links Footer */}
       <footer

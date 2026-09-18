@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Play instant, offline Tic Tac Toe with unbeatable Minimax AI, 3x3, 4x4 & 5x5 grids, and local 2-player mode. Created by Shoaib M Arif.",
   "author": "Shoaib M Arif",
-  "homepage_url": "https://tictactoe-pro.netlify.app/",
+  "homepage_url": "https://tickytoe.netlify.app/",
   "action": {
     "default_popup": "popup.html",
     "default_title": "Open tickytoe",

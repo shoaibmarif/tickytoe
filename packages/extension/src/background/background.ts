@@ -31,7 +31,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.contextMenus.onClicked.addListener((info) => {
   if (info.menuItemId === 'ttt-open-web') {
-    chrome.tabs.create({ url: 'https://tictactoe-pro.netlify.app/' });
+    chrome.tabs.create({ url: 'https://tickytoe.netlify.app/' });
   } else if (info.menuItemId === 'ttt-github') {
     chrome.tabs.create({ url: 'https://github.com/shoaibmarif' });
   } else if (info.menuItemId === 'ttt-linkedin') {

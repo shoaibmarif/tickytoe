@@ -1178,7 +1178,7 @@ const assets = [
       <div class="f-icon">🌐</div>
       <div class="f-title">Full Web App Link</div>
       <div class="f-desc">Want full screen, leaderboards, or custom sound themes? Launch the full web app with a single click anytime.</div>
-      <div class="f-link">tictactoe-pro.netlify.app ↗</div>
+      <div class="f-link">tickytoe.netlify.app ↗</div>
     </div>
 
     <div class="f-card">
